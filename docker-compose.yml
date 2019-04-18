@@ -1,0 +1,67 @@
+version: '3'
+services:
+
+  #PHP
+  app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    image: killbro
+    container_name: killbro-app
+    restart: unless-stopped
+    tty: true
+    environment:
+      SERVICE_NAME: app
+      SERVICE_TAGS: dev
+    working_dir: /var/www
+    volumes:
+       - ./:/var/www
+       - ./php/local.ini:/usr/local/etc/php/conf.d/local.ini
+    networks:
+      - killbros-network
+
+  #Nginx
+  webserver:
+    image: nginx:alpine
+    container_name: killbro-webserver
+    restart: unless-stopped
+    tty: true
+    ports:
+      - "8080:80"
+      - "443:443"
+    volumes:
+      - ./:/var/www
+      - ./nginx/conf.d/:/etc/nginx/conf.d/
+    networks:
+      - killbros-network
+
+
+  #MySQL Service
+  db:
+    image: mysql:5.7.22
+    container_name: killbro-db
+    restart: unless-stopped
+    tty: true
+    ports:
+      - "3306:3306"
+    environment:
+      MYSQL_DATABASE: killbros
+      MYSQL_ROOT_PASSWORD: toor
+      SERVICE_TAGS: dev
+      SERVICE_NAME: mysql
+    volumes:
+      - dbdata:/var/lib/mysql
+      - ./mysql/my.cnf:/etc/mysql/my.cnf
+    networks:
+      - killbros-network
+
+
+#Redes
+networks:
+  killbros-network:
+    driver: bridge
+
+#Volumes
+volumes:
+  dbdata:
+    driver: local
