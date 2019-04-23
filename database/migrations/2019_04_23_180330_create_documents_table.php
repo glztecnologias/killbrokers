@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateSettlementsTable extends Migration
+class CreateDocumentsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,7 +13,7 @@ class CreateSettlementsTable extends Migration
      */
     public function up()
     {
-        Schema::create('settlements', function (Blueprint $table) {
+        Schema::create('documents', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->timestamps();
         });
@@ -26,6 +26,6 @@ class CreateSettlementsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('settlements');
+        Schema::dropIfExists('documents');
     }
 }

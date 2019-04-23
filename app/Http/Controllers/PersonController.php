@@ -2,10 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use App\Settlement;
+use App\Person;
 use Illuminate\Http\Request;
 
-class SettlementController extends Controller
+class PersonController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -41,10 +41,10 @@ class SettlementController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\Settlement  $settlement
+     * @param  \App\Person  $person
      * @return \Illuminate\Http\Response
      */
-    public function show(Settlement $settlement)
+    public function show(Person $person)
     {
         //
     }
@@ -52,10 +52,10 @@ class SettlementController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Settlement  $settlement
+     * @param  \App\Person  $person
      * @return \Illuminate\Http\Response
      */
-    public function edit(Settlement $settlement)
+    public function edit(Person $person)
     {
         //
     }
@@ -64,10 +64,10 @@ class SettlementController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Settlement  $settlement
+     * @param  \App\Person  $person
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Settlement $settlement)
+    public function update(Request $request, Person $person)
     {
         //
     }
@@ -75,10 +75,10 @@ class SettlementController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Settlement  $settlement
+     * @param  \App\Person  $person
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Settlement $settlement)
+    public function destroy(Person $person)
     {
         //
     }

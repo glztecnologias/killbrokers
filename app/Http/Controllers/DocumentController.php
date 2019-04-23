@@ -2,10 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use App\Contribution;
+use App\Document;
 use Illuminate\Http\Request;
 
-class ContributionController extends Controller
+class DocumentController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -41,10 +41,10 @@ class ContributionController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\Contribution  $contribution
+     * @param  \App\Document  $document
      * @return \Illuminate\Http\Response
      */
-    public function show(Contribution $contribution)
+    public function show(Document $document)
     {
         //
     }
@@ -52,10 +52,10 @@ class ContributionController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Contribution  $contribution
+     * @param  \App\Document  $document
      * @return \Illuminate\Http\Response
      */
-    public function edit(Contribution $contribution)
+    public function edit(Document $document)
     {
         //
     }
@@ -64,10 +64,10 @@ class ContributionController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Contribution  $contribution
+     * @param  \App\Document  $document
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Contribution $contribution)
+    public function update(Request $request, Document $document)
     {
         //
     }
@@ -75,10 +75,10 @@ class ContributionController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Contribution  $contribution
+     * @param  \App\Document  $document
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Contribution $contribution)
+    public function destroy(Document $document)
     {
         //
     }
