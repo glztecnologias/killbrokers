@@ -15,6 +15,10 @@ class CreateRentalsTable extends Migration
     {
         Schema::create('rentals', function (Blueprint $table) {
             $table->bigIncrements('id');
+            $table->string('path_contract')->nullable();
+            $table->date('date_start')->nullable();
+            $table->date('date_end')->nullable();
+            $table->unsignedInteger('postulation_id');
             $table->timestamps();
         });
     }
