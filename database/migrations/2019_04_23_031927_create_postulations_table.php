@@ -15,6 +15,12 @@ class CreatePostulationsTable extends Migration
     {
         Schema::create('postulations', function (Blueprint $table) {
             $table->bigIncrements('id');
+            $table->string('status')->nullable(); //estado de la postulacion
+            $table->dateTime('date')->nullable(); // fecha de postulacion
+            $table->integer('process_evaluation')->nullable(); // evaluacion del proceso
+            $table->boolean('visit_state')->nullable(); //visito la propiedad
+            $table->unsignedInteger('person_id');
+            $table->unsignedInteger('process_id');
             $table->timestamps();
         });
     }

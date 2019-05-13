@@ -15,6 +15,11 @@ class CreateRulesTable extends Migration
     {
         Schema::create('rules', function (Blueprint $table) {
             $table->bigIncrements('id');
+            $table->integer('max_number_people')->nullable(); //numero maximo de personas que puede vivir en el inmueble. (1-n o null)
+            $table->boolean('pets')->nullable();  // pueden vivir mascotas? (si/no)
+            $table->boolean('parties')->nullable(); //se pueden hacer fiestas? (si/no)
+            $table->text('general_description')->nullable(); // descripcion general
+            $table->unsignedInteger('property_id');
             $table->timestamps();
         });
     }

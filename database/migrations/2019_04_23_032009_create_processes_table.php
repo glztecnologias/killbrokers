@@ -15,6 +15,14 @@ class CreateProcessesTable extends Migration
     {
         Schema::create('processes', function (Blueprint $table) {
             $table->bigIncrements('id');
+            $table->dateTime('start_date')->nullable(); 
+            $table->dateTime('end_date')->nullable();
+            $table->integer('max_number_postulation')->nullable(); 
+            $table->string('type_doc_date')->nullable(); 
+            $table->unsignedInteger('property_id');
+            $table->unsignedInteger('owner_id');
+            $table->unsignedInteger('requirement_id');
+
             $table->timestamps();
         });
     }
