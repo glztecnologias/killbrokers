@@ -1,6 +1,8 @@
 <?php
 
+Route::prefix('portal')->group(function () {
 
-Route::get('/prueba',function(){
-	return "Funciono";
-});
+  	Route::get('/','HomeController@index')->name('portal.home');
+    
+
+ });
